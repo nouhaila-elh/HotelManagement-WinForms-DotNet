@@ -15,6 +15,8 @@ namespace GestionHotel
         public Form1()
         {
             InitializeComponent();
+            removeBG(pictureBox3, pictureBox5);
+            removeBG(pictureBox1, pictureBox7);
         }
 
         void removeBG(PictureBox pb, PictureBox pb2)
@@ -87,6 +89,11 @@ namespace GestionHotel
         }
 
         private void pictureBox5_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
         }
