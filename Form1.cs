@@ -4,14 +4,29 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GestionHotel
 {
+   
     public partial class Form1 : Form
     {
+        [DllImport("Gdi32.dll",EntryPoint = "CreateRoundRectRgn")]
+
+        private static extern IntPtr CreateRoundRectRgn(
+            int nleft,
+            int nTop,
+            int nRight,
+            int nBottom,
+            int nWidthEllipse,
+            int nHeightEllipse
+
+
+            );
+
         public Form1()
         {
             InitializeComponent();
@@ -30,7 +45,7 @@ namespace GestionHotel
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            button1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 30, 30));
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

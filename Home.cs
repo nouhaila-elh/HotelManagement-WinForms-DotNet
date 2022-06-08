@@ -106,5 +106,10 @@ namespace GestionHotel
         {
 
         }
+
+        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
