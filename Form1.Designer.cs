@@ -107,10 +107,10 @@ namespace GestionHotel
             this.textBox1.BackColor = System.Drawing.Color.Silver;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(460, 193);
+            this.textBox1.Location = new System.Drawing.Point(535, 193);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 33);
+            this.textBox1.Size = new System.Drawing.Size(194, 33);
             this.textBox1.TabIndex = 5;
             this.textBox1.Text = " E-mail adresse";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

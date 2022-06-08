@@ -17,6 +17,15 @@ namespace GestionHotel
             InitializeComponent();
         }
 
+        void removeBG(PictureBox pb, PictureBox pb2)
+        {
+            var pos = this.PointToScreen(pb2.Location);
+            pos = pb.PointToClient(pos);
+            pb2.Parent = pb;
+            pb2.Location = pos;
+            pb2.BackColor = Color.Transparent;
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
