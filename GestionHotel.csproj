@@ -52,10 +52,55 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="forms\Clients.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Clients.Designer.cs">
+      <DependentUpon>Clients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Consommation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Consommation.Designer.cs">
+      <DependentUpon>Consommation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\hotels.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\hotels.Designer.cs">
+      <DependentUpon>hotels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="forms\Reservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="forms\Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Clients.resx">
+      <DependentUpon>Clients.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Consommation.resx">
+      <DependentUpon>Consommation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\hotels.resx">
+      <DependentUpon>hotels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="forms\Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
