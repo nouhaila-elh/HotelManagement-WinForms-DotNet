@@ -17,6 +17,7 @@ namespace GestionHotel
         public Home()
         {
             InitializeComponent();
+
         }
 
         void ActivateButton(Object btnSender)
@@ -68,7 +69,7 @@ namespace GestionHotel
             this.PanelChild.Tag = childform;
             childform.BringToFront();
             childform.Show();
-            label1.Text = childform.Text;
+            
 
         }
 
@@ -108,6 +109,21 @@ namespace GestionHotel
         }
 
         private void panelTitleBar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelChild_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelLogo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelMenu_Paint(object sender, PaintEventArgs e)
         {
 
         }
