@@ -30,7 +30,7 @@ namespace GestionHotel
         public Form1()
         {
             InitializeComponent();
-            removeBG(pictureBox3, pictureBox5);
+           // removeBG(pictureBox3, pictureBox5);
             removeBG(pictureBox1, pictureBox7);
         }
 
@@ -46,6 +46,9 @@ namespace GestionHotel
         private void Form1_Load(object sender, EventArgs e)
         {
             button1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, button1.Width, button1.Height, 30, 30));
+
+            textBox1.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox1.Width, textBox1.Height, 30, 30));
+            textBox2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox2.Width, textBox2.Height, 30, 30));
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
