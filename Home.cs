@@ -81,7 +81,7 @@ namespace GestionHotel
         private void button3_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new forms.Reservation(), sender);
+            OpenChildForm(new forms.Prestation(), sender);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -94,13 +94,13 @@ namespace GestionHotel
         private void button2_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new forms.Clients(), sender);
+            OpenChildForm(new forms.Reservation(), sender);
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             ActivateButton(sender);
-            OpenChildForm(new forms.Consommation(), sender);
+            OpenChildForm(new forms.Facture(), sender);
         }
 
         private void label2_Click(object sender, EventArgs e)

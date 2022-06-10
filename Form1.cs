@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionHotel.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,20 +52,24 @@ namespace GestionHotel
             textBox2.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textBox2.Width, textBox2.Height, 30, 30));
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            if(textBox1.Text == "E-mail adresse")
+            {
+                textBox1.Text = "";
+                textBox1.ForeColor = Color.Black;
+            }
         }
+
+        private void textBox1_leave(object sender, EventArgs e)
+        {
+            if (textBox1.Text == "")
+            {
+                textBox1.Text = "E-mail adresse";
+                textBox1.ForeColor = Color.DimGray;
+            }
+        }
+
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
@@ -88,7 +93,27 @@ namespace GestionHotel
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            System.Diagnostics.Debug.WriteLine(textBox2.Text);
+            DB db = new DB();
+            var a = db.employes;
+            System.Diagnostics.Debug.WriteLine(a.Count());
+            // System.Diagnostics.Debug.WriteLine(db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0);
 
+            /* if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
+             {
+                 //do something after login
+                 Home h = new Home();
+                 h.Show();
+                 this.Hide();
+
+             }*/
+
+            if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
+            {
+                Home h = new Home();
+                h.Show();
+                this.Hide();
+            }
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
@@ -101,22 +126,36 @@ namespace GestionHotel
 
         }
 
-        private void pictureBox5_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox5_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
+            if (textBox2.Text == "Mot de passe")
+            {
+                textBox2.Text = "";
+                textBox2.ForeColor = Color.Black;
+            }
+        }
+
+        private void textBox2_leave(object sender, EventArgs e)
+        {
+            if (textBox2.Text == "")
+            {
+                textBox2.Text = "Mot de passe";
+                textBox2.ForeColor = Color.DimGray;
+            }
+        }
+
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
 
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }

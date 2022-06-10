@@ -54,8 +54,8 @@
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=6.0.0.1, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.6.0.1\lib\net461\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
     </Reference>
-    <Reference Include="Npgsql, Version=7.0.0.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <HintPath>packages\Npgsql.7.0.0-preview.4\lib\netstandard2.0\Npgsql.dll</HintPath>
+    <Reference Include="Npgsql, Version=6.0.4.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.6.0.4\lib\netstandard2.0\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -107,23 +107,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\categorie.cs" />
+    <Compile Include="Data\chambre.cs" />
+    <Compile Include="Data\DB.cs" />
+    <Compile Include="Data\employe.cs" />
+    <Compile Include="Data\hotel.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Clients.cs">
+    <Compile Include="forms\Reservation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Clients.Designer.cs">
-      <DependentUpon>Clients.cs</DependentUpon>
+    <Compile Include="forms\Reservation.Designer.cs">
+      <DependentUpon>Reservation.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Consommation.cs">
+    <Compile Include="forms\Prestation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Consommation.Designer.cs">
-      <DependentUpon>Consommation.cs</DependentUpon>
+    <Compile Include="forms\Prestation.Designer.cs">
+      <DependentUpon>Prestation.cs</DependentUpon>
     </Compile>
     <Compile Include="forms\hotels.cs">
       <SubType>Form</SubType>
@@ -131,11 +136,11 @@
     <Compile Include="forms\hotels.Designer.cs">
       <DependentUpon>hotels.cs</DependentUpon>
     </Compile>
-    <Compile Include="forms\Reservation.cs">
+    <Compile Include="forms\Facture.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="forms\Reservation.Designer.cs">
-      <DependentUpon>Reservation.cs</DependentUpon>
+    <Compile Include="forms\Facture.Designer.cs">
+      <DependentUpon>Facture.cs</DependentUpon>
     </Compile>
     <Compile Include="Home.cs">
       <SubType>Form</SubType>
@@ -148,17 +153,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Clients.resx">
-      <DependentUpon>Clients.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Reservation.resx">
+      <DependentUpon>Reservation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Consommation.resx">
-      <DependentUpon>Consommation.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Prestation.resx">
+      <DependentUpon>Prestation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="forms\hotels.resx">
       <DependentUpon>hotels.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="forms\Reservation.resx">
-      <DependentUpon>Reservation.cs</DependentUpon>
+    <EmbeddedResource Include="forms\Facture.resx">
+      <DependentUpon>Facture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

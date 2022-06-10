@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GestionHotel.forms
 {
-    public partial class Consommation : Form
+    public partial class Facture : Form
     {
-        public Consommation()
+        public Facture()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

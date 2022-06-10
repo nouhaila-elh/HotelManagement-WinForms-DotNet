@@ -77,7 +77,7 @@ namespace GestionHotel
             this.button4.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.button4.Size = new System.Drawing.Size(215, 79);
             this.button4.TabIndex = 4;
-            this.button4.Text = "Consommation";
+            this.button4.Text = "Facture";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button4.UseVisualStyleBackColor = false;
@@ -98,7 +98,7 @@ namespace GestionHotel
             this.button3.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.button3.Size = new System.Drawing.Size(215, 79);
             this.button3.TabIndex = 3;
-            this.button3.Text = "Réservation";
+            this.button3.Text = "Prestations";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button3.UseVisualStyleBackColor = false;
@@ -119,7 +119,7 @@ namespace GestionHotel
             this.button2.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
             this.button2.Size = new System.Drawing.Size(215, 79);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Clients";
+            this.button2.Text = "Réservation";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = false;
