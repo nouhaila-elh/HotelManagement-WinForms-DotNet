@@ -93,8 +93,8 @@ namespace GestionHotel.forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panelhotel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picturehotel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picturehotel2)).BeginInit();
@@ -117,8 +117,8 @@ namespace GestionHotel.forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.SuspendLayout();
             // 
             // panelhotel1
@@ -457,14 +457,14 @@ namespace GestionHotel.forms
             this.label24.ForeColor = System.Drawing.Color.White;
             this.label24.Location = new System.Drawing.Point(76, 11);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(173, 15);
+            this.label24.Size = new System.Drawing.Size(152, 15);
             this.label24.TabIndex = 1;
-            this.label24.Text = "GOLDEN TULIPE DAKHLA";
+            this.label24.Text = "GOLDEN TULIPE TATA";
             // 
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(82, 33);
+            this.pictureBox6.Location = new System.Drawing.Point(67, 33);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(125, 29);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -546,9 +546,9 @@ namespace GestionHotel.forms
             this.label25.ForeColor = System.Drawing.Color.White;
             this.label25.Location = new System.Drawing.Point(71, 14);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(163, 15);
+            this.label25.Size = new System.Drawing.Size(173, 15);
             this.label25.TabIndex = 1;
-            this.label25.Text = "GOLDEN TULIPE RABAT";
+            this.label25.Text = "GOLDEN TULIPE DAKHLA";
             // 
             // picturehotel5
             // 
@@ -705,9 +705,9 @@ namespace GestionHotel.forms
             this.label35.ForeColor = System.Drawing.Color.White;
             this.label35.Location = new System.Drawing.Point(76, 11);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(173, 15);
+            this.label35.Size = new System.Drawing.Size(167, 15);
             this.label35.TabIndex = 1;
-            this.label35.Text = "GOLDEN TULIPE DAKHLA";
+            this.label35.Text = "GOLDEN TULIPE ASILAH";
             // 
             // picturehotel8
             // 
@@ -784,9 +784,9 @@ namespace GestionHotel.forms
             this.label40.ForeColor = System.Drawing.Color.White;
             this.label40.Location = new System.Drawing.Point(76, 11);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(173, 15);
+            this.label40.Size = new System.Drawing.Size(175, 15);
             this.label40.TabIndex = 1;
-            this.label40.Text = "GOLDEN TULIPE DAKHLA";
+            this.label40.Text = "GOLDEN TULIPE TANGER";
             // 
             // pictureBox1
             // 
@@ -801,9 +801,9 @@ namespace GestionHotel.forms
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(69, 29);
+            this.pictureBox2.Location = new System.Drawing.Point(79, 29);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(125, 29);
+            this.pictureBox2.Size = new System.Drawing.Size(79, 29);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
@@ -811,32 +811,32 @@ namespace GestionHotel.forms
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(74, 32);
+            this.pictureBox5.Location = new System.Drawing.Point(71, 36);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(125, 29);
+            this.pictureBox5.Size = new System.Drawing.Size(79, 29);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 7;
+            this.pictureBox5.TabIndex = 8;
             this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(78, 29);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(125, 29);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 7;
-            this.pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
             this.pictureBox8.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox8.Image")));
-            this.pictureBox8.Location = new System.Drawing.Point(78, 29);
+            this.pictureBox8.Location = new System.Drawing.Point(85, 29);
             this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(125, 29);
+            this.pictureBox8.Size = new System.Drawing.Size(99, 29);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox8.TabIndex = 7;
             this.pictureBox8.TabStop = false;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(79, 29);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(79, 29);
+            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox7.TabIndex = 9;
+            this.pictureBox7.TabStop = false;
             // 
             // hotels
             // 
@@ -894,8 +894,8 @@ namespace GestionHotel.forms
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -963,8 +963,8 @@ namespace GestionHotel.forms
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
     }
