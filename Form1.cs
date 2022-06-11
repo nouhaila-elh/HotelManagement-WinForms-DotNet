@@ -1,18 +1,13 @@
-﻿using GestionHotel.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GestionHotel
 {
-   
+
     public partial class Form1 : Form
     {
         [DllImport("Gdi32.dll",EntryPoint = "CreateRoundRectRgn")]
@@ -94,19 +89,19 @@ namespace GestionHotel
         private void button1_Click_1(object sender, EventArgs e)
         {
             System.Diagnostics.Debug.WriteLine(textBox2.Text);
-            DB db = new DB();
+            Model1 db = new Model1();
             var a = db.employes;
             System.Diagnostics.Debug.WriteLine(a.Count());
             // System.Diagnostics.Debug.WriteLine(db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0);
 
-            /* if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
-             {
-                 //do something after login
-                 Home h = new Home();
-                 h.Show();
-                 this.Hide();
+            if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
+            {
+                //do something after login
+                Home h = new Home();
+                h.Show();
+                this.Hide();
 
-             }*/
+            }
 
             if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
             {

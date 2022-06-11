@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GestionHotel.forms
@@ -27,6 +23,7 @@ namespace GestionHotel.forms
 
            );
 
+
         public Reservation()
         {
             InitializeComponent();
@@ -40,8 +37,24 @@ namespace GestionHotel.forms
             BoxTel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxTel.Width, BoxTel.Height, 30, 30));
 
 
-          BoxArrhes.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxArrhes.Width, BoxArrhes.Height, 30, 30));
-          Valider.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Valider.Width, Valider.Height, 15, 15));
+            BoxArrhes.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxArrhes.Width, BoxArrhes.Height, 30, 30));
+            Valider.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Valider.Width, Valider.Height, 15, 15));
+
+            Model1 db = new Model1();
+            var hotel = db.hotels.Select(u => u.nom);
+            hotelbox.DataSource = hotel.ToList();
+
+           // var hotel_id = 1; // Change this variable for your real cat_id
+
+          /*  var query = from categorie in db.categories
+                        where categorie.hotels.Any(c => c.id == hotel_id)
+                        select categorie.description;
+
+            var querycat = db.hotels.Where(c => c.id == hotel_id).SelectMany(c => c.categories.Select(u => u.id));
+
+        */   // Console.WriteLine(querycat.ToList());
+           // comboBoxcat.DataSource = query.ToList();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -65,6 +78,13 @@ namespace GestionHotel.forms
         }
 
         private void Clients_Load(object sender, EventArgs e)
+        {
+            // TODO: cette ligne de code charge les données dans la table 'postgresDataSet.categories'. Vous pouvez la déplacer ou la supprimer selon les besoins.
+            this.categoriesTableAdapter.Fill(this.postgresDataSet.categories);
+
+        }
+
+        private void hotelbox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -29,6 +29,7 @@ namespace GestionHotel.forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.BoxNom = new System.Windows.Forms.TextBox();
             this.BoxPrenom = new System.Windows.Forms.TextBox();
@@ -56,10 +57,17 @@ namespace GestionHotel.forms
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.hotelbox = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxcat = new System.Windows.Forms.ComboBox();
             this.BoxArrhes = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
+            this.postgresDataSet = new GestionHotel.postgresDataSet();
+            this.postgresDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoriesTableAdapter = new GestionHotel.postgresDataSetTableAdapters.categoriesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -366,17 +374,20 @@ namespace GestionHotel.forms
             this.hotelbox.Name = "hotelbox";
             this.hotelbox.Size = new System.Drawing.Size(224, 28);
             this.hotelbox.TabIndex = 29;
+            this.hotelbox.SelectedIndexChanged += new System.EventHandler(this.hotelbox_SelectedIndexChanged);
             // 
-            // comboBox1
+            // comboBoxcat
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(531, 230);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(224, 28);
-            this.comboBox1.TabIndex = 30;
+            this.comboBoxcat.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comboBoxcat.DataSource = this.categoriesBindingSource;
+            this.comboBoxcat.DisplayMember = "description";
+            this.comboBoxcat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxcat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxcat.FormattingEnabled = true;
+            this.comboBoxcat.Location = new System.Drawing.Point(531, 230);
+            this.comboBoxcat.Name = "comboBoxcat";
+            this.comboBoxcat.Size = new System.Drawing.Size(224, 28);
+            this.comboBoxcat.TabIndex = 30;
             // 
             // BoxArrhes
             // 
@@ -411,6 +422,25 @@ namespace GestionHotel.forms
             this.label15.TabIndex = 31;
             this.label15.Text = "Chambre                  :";
             // 
+            // postgresDataSet
+            // 
+            this.postgresDataSet.DataSetName = "postgresDataSet";
+            this.postgresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // postgresDataSetBindingSource
+            // 
+            this.postgresDataSetBindingSource.DataSource = this.postgresDataSet;
+            this.postgresDataSetBindingSource.Position = 0;
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "categories";
+            this.categoriesBindingSource.DataSource = this.postgresDataSetBindingSource;
+            // 
+            // categoriesTableAdapter
+            // 
+            this.categoriesTableAdapter.ClearBeforeFill = true;
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,7 +449,7 @@ namespace GestionHotel.forms
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxcat);
             this.Controls.Add(this.hotelbox);
             this.Controls.Add(this.BoxArrhes);
             this.Controls.Add(this.label14);
@@ -451,6 +481,9 @@ namespace GestionHotel.forms
             this.Name = "Reservation";
             this.Text = "Enregistrer le Client";
             this.Load += new System.EventHandler(this.Clients_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,9 +518,13 @@ namespace GestionHotel.forms
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox hotelbox;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxcat;
         private System.Windows.Forms.TextBox BoxArrhes;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.BindingSource postgresDataSetBindingSource;
+        private postgresDataSet postgresDataSet;
+        private System.Windows.Forms.BindingSource categoriesBindingSource;
+        private postgresDataSetTableAdapters.categoriesTableAdapter categoriesTableAdapter;
     }
 }

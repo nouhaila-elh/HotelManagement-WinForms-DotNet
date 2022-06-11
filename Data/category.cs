@@ -6,11 +6,11 @@ namespace GestionHotel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("public.hotels")]
-    public partial class hotel
+    [Table("public.categories")]
+    public partial class category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public hotel()
+        public category()
         {
             chambres = new HashSet<chambre>();
             hotelcategories = new HashSet<hotelcategory>();
@@ -18,15 +18,7 @@ namespace GestionHotel
 
         [Required]
         [StringLength(600)]
-        public string nom { get; set; }
-
-        [Required]
-        [StringLength(300)]
-        public string address { get; set; }
-
-        public int tel { get; set; }
-
-        public int clss { get; set; }
+        public string description { get; set; }
 
         public int id { get; set; }
 
