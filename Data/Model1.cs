@@ -24,6 +24,8 @@ namespace GestionHotel
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+
             modelBuilder.Entity<category>()
                 .HasMany(e => e.chambres)
                 .WithOptional(e => e.category)

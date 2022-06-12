@@ -63,6 +63,7 @@ namespace GestionHotel.forms
             this.postgresDataSet = new GestionHotel.postgresDataSet();
             this.BoxArrhes = new System.Windows.Forms.TextBox();
             this.comboBoxchambre = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.categoriesTableAdapter = new GestionHotel.postgresDataSetTableAdapters.categoriesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
@@ -93,6 +94,7 @@ namespace GestionHotel.forms
             this.BoxNom.TabIndex = 1;
             this.BoxNom.TabStop = false;
             this.BoxNom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BoxNom.TextChanged += new System.EventHandler(this.BoxNom_TextChanged);
             // 
             // BoxPrenom
             // 
@@ -265,6 +267,7 @@ namespace GestionHotel.forms
             this.Valider.TabIndex = 16;
             this.Valider.Text = "Valider";
             this.Valider.UseVisualStyleBackColor = false;
+            this.Valider.Click += new System.EventHandler(this.Valider_Click);
             // 
             // label9
             // 

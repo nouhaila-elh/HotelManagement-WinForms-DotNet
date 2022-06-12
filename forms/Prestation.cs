@@ -42,5 +42,28 @@ namespace GestionHotel.forms
         {
 
         }
+
+        private void BoxNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Model1 db = new Model1();
+            reservation rsrvtnobject = db.reservations.AsEnumerable().FirstOrDefault(s => s.id == int.Parse(BoxNom.Text));
+
+            prestation prst = new prestation() { reservation = rsrvtnobject,
+                prix_prestation = float.Parse(textBox1.Text),
+                date_consommation = DateTime.Parse(dateDebut.Text),
+            };
+            db.prestations.Add(prst);
+
+            db.SaveChanges();
+
+            grd.DataSource = db.prestations.Select(u => u).ToList();
+
+
+        }
     }
 }
