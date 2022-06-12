@@ -58,16 +58,16 @@ namespace GestionHotel.forms
             this.label14 = new System.Windows.Forms.Label();
             this.hotelbox = new System.Windows.Forms.ComboBox();
             this.comboBoxcat = new System.Windows.Forms.ComboBox();
+            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postgresDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.postgresDataSet = new GestionHotel.postgresDataSet();
             this.BoxArrhes = new System.Windows.Forms.TextBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.postgresDataSet = new GestionHotel.postgresDataSet();
-            this.postgresDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.categoriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoriesTableAdapter = new GestionHotel.postgresDataSetTableAdapters.categoriesTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,6 +93,7 @@ namespace GestionHotel.forms
             this.BoxNom.TabIndex = 1;
             this.BoxNom.TabStop = false;
             this.BoxNom.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BoxNom.TextChanged += new System.EventHandler(this.BoxNom_TextChanged);
             // 
             // BoxPrenom
             // 
@@ -265,6 +266,7 @@ namespace GestionHotel.forms
             this.Valider.TabIndex = 16;
             this.Valider.Text = "Valider";
             this.Valider.UseVisualStyleBackColor = false;
+            this.Valider.Click += new System.EventHandler(this.Valider_Click);
             // 
             // label9
             // 
@@ -388,6 +390,22 @@ namespace GestionHotel.forms
             this.comboBoxcat.Name = "comboBoxcat";
             this.comboBoxcat.Size = new System.Drawing.Size(224, 28);
             this.comboBoxcat.TabIndex = 30;
+            this.comboBoxcat.SelectedIndexChanged += new System.EventHandler(this.comboBoxcat_SelectedIndexChanged);
+            // 
+            // categoriesBindingSource
+            // 
+            this.categoriesBindingSource.DataMember = "categories";
+            this.categoriesBindingSource.DataSource = this.postgresDataSetBindingSource;
+            // 
+            // postgresDataSetBindingSource
+            // 
+            this.postgresDataSetBindingSource.DataSource = this.postgresDataSet;
+            this.postgresDataSetBindingSource.Position = 0;
+            // 
+            // postgresDataSet
+            // 
+            this.postgresDataSet.DataSetName = "postgresDataSet";
+            this.postgresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // BoxArrhes
             // 
@@ -421,21 +439,6 @@ namespace GestionHotel.forms
             this.label15.Size = new System.Drawing.Size(155, 20);
             this.label15.TabIndex = 31;
             this.label15.Text = "Chambre                  :";
-            // 
-            // postgresDataSet
-            // 
-            this.postgresDataSet.DataSetName = "postgresDataSet";
-            this.postgresDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // postgresDataSetBindingSource
-            // 
-            this.postgresDataSetBindingSource.DataSource = this.postgresDataSet;
-            this.postgresDataSetBindingSource.Position = 0;
-            // 
-            // categoriesBindingSource
-            // 
-            this.categoriesBindingSource.DataMember = "categories";
-            this.categoriesBindingSource.DataSource = this.postgresDataSetBindingSource;
             // 
             // categoriesTableAdapter
             // 
@@ -481,9 +484,9 @@ namespace GestionHotel.forms
             this.Name = "Reservation";
             this.Text = "Enregistrer le Client";
             this.Load += new System.EventHandler(this.Clients_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.postgresDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

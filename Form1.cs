@@ -94,14 +94,14 @@ namespace GestionHotel
             System.Diagnostics.Debug.WriteLine(a.Count());
             // System.Diagnostics.Debug.WriteLine(db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0);
 
-            if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
+/*            if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
             {
                 //do something after login
                 Home h = new Home();
                 h.Show();
                 this.Hide();
 
-            }
+            }*/
 
             if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
             {
