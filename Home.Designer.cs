@@ -58,7 +58,7 @@ namespace GestionHotel
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(215, 450);
+            this.panelMenu.Size = new System.Drawing.Size(215, 446);
             this.panelMenu.TabIndex = 0;
             this.panelMenu.Paint += new System.Windows.Forms.PaintEventHandler(this.panelMenu_Paint);
             // 
@@ -189,7 +189,7 @@ namespace GestionHotel
             this.PanelChild.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PanelChild.Location = new System.Drawing.Point(215, 0);
             this.PanelChild.Name = "PanelChild";
-            this.PanelChild.Size = new System.Drawing.Size(769, 450);
+            this.PanelChild.Size = new System.Drawing.Size(769, 446);
             this.PanelChild.TabIndex = 2;
             this.PanelChild.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelChild_Paint);
             // 
@@ -207,7 +207,7 @@ namespace GestionHotel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 450);
+            this.ClientSize = new System.Drawing.Size(984, 446);
             this.Controls.Add(this.PanelChild);
             this.Controls.Add(this.panelMenu);
             this.Name = "Home";

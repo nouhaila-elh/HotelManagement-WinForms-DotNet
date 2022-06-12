@@ -12,6 +12,7 @@ namespace GestionHotel
 {
     public partial class Home : Form
     {
+
         private Button CurrentButton;
         private Form activeForm;
         public Home()
@@ -86,6 +87,8 @@ namespace GestionHotel
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+
             ActivateButton(sender);
             OpenChildForm(new forms.hotels(),sender);
 
@@ -127,5 +130,7 @@ namespace GestionHotel
         {
 
         }
+
+      
     }
 }

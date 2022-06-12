@@ -8,7 +8,7 @@ namespace GestionHotel
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=ghotel")
+            : base("name=Model1")
         {
         }
 
@@ -19,6 +19,7 @@ namespace GestionHotel
         public virtual DbSet<hotelcategory> hotelcategories { get; set; }
         public virtual DbSet<hotel> hotels { get; set; }
         public virtual DbSet<prestation> prestations { get; set; }
+        public virtual DbSet<reservationarchive> reservationarchives { get; set; }
         public virtual DbSet<reservation> reservations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -4,6 +4,8 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using System.Linq;
+using System.Data.Entity;
 
 namespace GestionHotel.forms
 {
@@ -44,16 +46,7 @@ namespace GestionHotel.forms
             var hotel = db.hotels.Select(u => u.nom);
             hotelbox.DataSource = hotel.ToList();
 
-           // var hotel_id = 1; // Change this variable for your real cat_id
-
-          /*  var query = from categorie in db.categories
-                        where categorie.hotels.Any(c => c.id == hotel_id)
-                        select categorie.description;
-
-            var querycat = db.hotels.Where(c => c.id == hotel_id).SelectMany(c => c.categories.Select(u => u.id));
-
-        */   // Console.WriteLine(querycat.ToList());
-           // comboBoxcat.DataSource = query.ToList();
+           
 
         }
 
@@ -86,6 +79,43 @@ namespace GestionHotel.forms
 
         private void hotelbox_SelectedIndexChanged(object sender, EventArgs e)
         {
+        }
+
+        private void OnDropDownClosed(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void comboBoxcat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hotelbox_OnDropDownClosed(object sender, EventArgs e)
+        {
+            Model1 db = new Model1();
+            var hotel_name = hotelbox.SelectedItem;
+
+            var hotel_id = db.hotels.Where(x => x.nom == (string)hotel_name).Select(r => r.id).First();
+
+            var query = db.hotelcategories.Include(x => x.category).Where(entry => entry.hotelid == hotel_id).Select(entry => entry.category.description);
+
+            Console.WriteLine(query.ToList());
+            comboBoxcat.DataSource = query.ToList();
+        }
+
+        private void BoxCat_OnDropDownClosed(object sender, EventArgs e)
+        {
+            Model1 db = new Model1();
+            var cat_description = comboBoxcat.SelectedItem;
+
+            var cat_id = db.categories.Where(x => x.description == (string)cat_description).Select(r => r.id).First();
+
+            var query = db.chambres.Where(x=> x.categorieid == cat_id).Select(r=> r.id);
+
+            Console.WriteLine(query.ToList());
+            comboBoxchambre.DataSource = query.ToList();
 
         }
     }
