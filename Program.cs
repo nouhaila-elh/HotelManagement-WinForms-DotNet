@@ -37,15 +37,15 @@ namespace GestionHotel
 
             DateTime date_archivage = DateTime.Today.AddMonths(-6);
 
-            var res = db.reservations.Where(x => x.date_res <= date_archivage).ToList();
+            var res = db.reservations1.Where(x => x.date_res <= date_archivage).ToList();
 
-            var resArchive = new reservationarchive();
+            var resArchive = new reservation();
 
             var countColumns = res.Count;
 
             foreach (var entity in res)
             {
-                var row = new reservationarchive();
+                var row = new reservation();
                 row.chambreid = entity.chambreid;
                 row.clientid = entity.clientid;
                 row.date_res = entity.date_res;
@@ -53,8 +53,8 @@ namespace GestionHotel
                 row.date_fin = entity.date_fin;
                 row.date_pay_arrhes = entity.date_pay_arrhes;
 
-                db.reservationarchives.Add(row);
-                db.reservations.Remove(entity);
+                db.reservations.Add(row);
+                db.reservations1.Remove(entity);
                 db.SaveChanges();
 
                 Console.WriteLine("l'archivage a  été effectué");

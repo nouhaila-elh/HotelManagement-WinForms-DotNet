@@ -6,14 +6,13 @@ namespace GestionHotel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("public.chambres")]
+    [Table("archive.chambres")]
     public partial class chambre
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public chambre()
         {
             reservations = new HashSet<reservation>();
-            reservationarchives = new HashSet<reservationarchive>();
         }
 
         public int? hotelid { get; set; }
@@ -30,8 +29,5 @@ namespace GestionHotel
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<reservation> reservations { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reservationarchive> reservationarchives { get; set; }
     }
 }

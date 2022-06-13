@@ -95,9 +95,9 @@ namespace GestionHotel.forms
             Model1 db = new Model1();
             var hotel_name = hotelbox.SelectedItem;
 
-            var hotel_id = db.hotels.Where(x => x.nom == (string)hotel_name).Select(r => r.id).First();
+            var hotel_id = db.hotels1.Where(x => x.nom == (string)hotel_name).Select(r => r.id).First();
 
-            var query = db.hotelcategories.Include(x => x.category).Where(entry => entry.hotelid == hotel_id).Select(entry => entry.category.description);
+            var query = db.hotelcategories.Include(x => x.categories1).Where(entry => entry.hotelid == hotel_id).Select(entry => entry.categories1.description);
 
             Console.WriteLine(query.ToList());
             comboBoxcat.DataSource = query.ToList();
@@ -108,41 +108,38 @@ namespace GestionHotel.forms
             Model1 db = new Model1();
             var cat_description = comboBoxcat.SelectedItem;
 
-            var cat_id = db.categories.Where(x => x.description == (string)cat_description).Select(r => r.id).First();
+            var cat_id = db.categories1.Where(x => x.description == (string)cat_description).Select(r => r.id).First();
 
-            var query = db.chambres.Where(x=> x.categorieid == cat_id).Select(r=> r.id);
+            var query = db.chambres1.Where(x=> x.categorieid == cat_id).Select(r=> r.id);
 
             Console.WriteLine(query.ToList());
             comboBoxchambre.DataSource = query.ToList();
 
         }
 
-        private void comboBoxcat_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Valider_Click(object sender, EventArgs e)
         {
             Model1 db = new Model1();
-            client clnt = new client() { nom = BoxNom.Text, address =BoxAdresse.Text , prenom = BoxPrenom.Text, ville=BoxVille.Text, code_postale = int.Parse(BoxCodePostale.Text), pays = BoxPays.Text, tel = int.Parse(BoxTel.Text) , email = BoxEmail.Text};
-            db.clients.Add(clnt);
+            clients1 clnt = new clients1() { nom = BoxNom.Text, address =BoxAdresse.Text , prenom = BoxPrenom.Text, ville=BoxVille.Text, code_postale = int.Parse(BoxCodePostale.Text), pays = BoxPays.Text, tel = int.Parse(BoxTel.Text) , email = BoxEmail.Text};
+            db.clients1.Add(clnt);
             db.SaveChanges();
 
             var clntId = clnt.id;
-            client clntobjct = db.clients.FirstOrDefault(s => s.id == clntId);
+            clients1 clntobjct = db.clients1.FirstOrDefault(s => s.id == clntId);
 
-            reservation resrv = new reservation() { 
-                chambreid = int.Parse(comboBox2.Text),
+            reservations1 resrv = new reservations1() { 
+                chambreid = int.Parse(comboBoxchambre.Text),
                 clientid = clntId,
-                client = clntobjct,
+                clients1 = clntobjct,
                 date_res = DateTime.UtcNow,
                 date_debut = DateTime.Parse(dateDebut.Text),
                 date_fin = DateTime.Parse(dateTimePicker1.Text),
                 date_pay_arrhes = DateTime.Parse(dateTimePicker2.Text)
              };
 
-            db.reservations.Add(resrv);
+            db.reservations1.Add(resrv);
 
             db.SaveChanges();
 
@@ -150,6 +147,11 @@ namespace GestionHotel.forms
         }
 
         private void BoxNom_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxchambre_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

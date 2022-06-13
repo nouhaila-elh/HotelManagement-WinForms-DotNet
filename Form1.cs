@@ -90,7 +90,7 @@ namespace GestionHotel
         {
             System.Diagnostics.Debug.WriteLine(textBox2.Text);
             Model1 db = new Model1();
-            var a = db.employes;
+            var a = db.employes1;
             System.Diagnostics.Debug.WriteLine(a.Count());
             // System.Diagnostics.Debug.WriteLine(db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0);
 
@@ -103,7 +103,7 @@ namespace GestionHotel
 
             }*/
 
-            if (db.employes.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
+            if (db.employes1.Where(r => r.email == textBox1.Text && r.psswrd == textBox2.Text).Count() > 0)
             {
                 Home h = new Home();
                 h.Show();

@@ -63,7 +63,6 @@ namespace GestionHotel.forms
             this.postgresDataSet = new GestionHotel.postgresDataSet();
             this.BoxArrhes = new System.Windows.Forms.TextBox();
             this.comboBoxchambre = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.categoriesTableAdapter = new GestionHotel.postgresDataSetTableAdapters.categoriesTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
@@ -390,7 +389,6 @@ namespace GestionHotel.forms
             this.comboBoxcat.Name = "comboBoxcat";
             this.comboBoxcat.Size = new System.Drawing.Size(224, 28);
             this.comboBoxcat.TabIndex = 30;
-            this.comboBoxcat.SelectedIndexChanged += new System.EventHandler(this.comboBoxcat_SelectedIndexChanged);
             this.comboBoxcat.DropDownClosed += new System.EventHandler(this.BoxCat_OnDropDownClosed);
             // 
             // categoriesBindingSource
@@ -430,6 +428,7 @@ namespace GestionHotel.forms
             this.comboBoxchambre.Name = "comboBoxchambre";
             this.comboBoxchambre.Size = new System.Drawing.Size(224, 28);
             this.comboBoxchambre.TabIndex = 32;
+            this.comboBoxchambre.SelectedIndexChanged += new System.EventHandler(this.comboBoxchambre_SelectedIndexChanged);
             // 
             // label15
             // 

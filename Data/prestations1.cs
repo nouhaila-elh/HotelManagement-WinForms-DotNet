@@ -6,8 +6,8 @@ namespace GestionHotel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("archive.prestations")]
-    public partial class prestation
+    [Table("public.prestations")]
+    public partial class prestations1
     {
         public int? reservationid { get; set; }
 
@@ -18,11 +18,11 @@ namespace GestionHotel
         public int id { get; set; }
 
         [StringLength(8000)]
-        public string type_prestation { get; set; }
-
-        [StringLength(8000)]
         public string description { get; set; }
 
-        public virtual reservation reservation { get; set; }
+        [StringLength(8000)]
+        public string type_prestation { get; set; }
+
+        public virtual reservations1 reservations1 { get; set; }
     }
 }

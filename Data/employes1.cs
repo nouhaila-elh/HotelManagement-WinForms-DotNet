@@ -6,8 +6,8 @@ namespace GestionHotel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("archive.employes")]
-    public partial class employe
+    [Table("public.employes")]
+    public partial class employes1
     {
         [StringLength(255)]
         public string lastname { get; set; }

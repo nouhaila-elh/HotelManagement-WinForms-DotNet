@@ -15,8 +15,8 @@ namespace GestionHotel
 
         public int id { get; set; }
 
-        public virtual category category { get; set; }
+        public virtual categories1 categories1 { get; set; }
 
-        public virtual hotel hotel { get; set; }
+        public virtual hotels1 hotels1 { get; set; }
     }
 }

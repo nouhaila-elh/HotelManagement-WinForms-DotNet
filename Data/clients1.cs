@@ -6,13 +6,13 @@ namespace GestionHotel
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("archive.clients")]
-    public partial class client
+    [Table("public.clients")]
+    public partial class clients1
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public client()
+        public clients1()
         {
-            reservations = new HashSet<reservation>();
+            reservations1 = new HashSet<reservations1>();
         }
 
         [Required]
@@ -46,6 +46,6 @@ namespace GestionHotel
         public string email { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reservation> reservations { get; set; }
+        public virtual ICollection<reservations1> reservations1 { get; set; }
     }
 }
