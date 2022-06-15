@@ -99,11 +99,23 @@ namespace GestionHotel.forms
             TextFacture.Text += " TextDateRes :" + TextDateRes.Text+"\n\n";
             TextFacture.Text += " textDateArrhes :" + textDateArrhes.Text+"\n\n";
             TextFacture.Text += " textDateDebut :" + textDateDebut.Text+"\n\n";
-            TextFacture.Text += " textDateFin :" + textDateFin.Text+"\n\n";
+            TextFacture.Text += " textDateFin :" + textDateFin.Text+"\n\n\n";
 
             Model1 db = new Model1();
             var id_reservation = int.Parse(textSearch.Text);
             var res = db.reservations1.Where(x => x.id == id_reservation).First();
+
+            var id_chambre = res.chambreid;
+            var chmb = db.chambres1.Where(x => x.id == id_chambre).First();
+
+            var id_categorie = chmb.categorieid;
+            var id_hotel = chmb.hotelid;
+
+            var cat = db.categories1.Where(x => x.id == id_categorie).First();
+            var htl = db.hotels1.Where(x => x.id == id_hotel).First();
+
+            TextFacture.Text += "Hôtel :" + htl.nom + "\n\n";
+            TextFacture.Text += "catégorie de Chambre :" + cat.description + "\n\n";
 
             var prixReservation = res.prix_res;
 
@@ -163,6 +175,22 @@ namespace GestionHotel.forms
         {
             printPreviewDialog1.Document = printDocument1;
             printPreviewDialog1.ShowDialog();
+
+            Model1 db = new Model1();
+            var id_reservation = int.Parse(textSearch.Text);
+            var res = db.reservations1.Where(x => x.id == id_reservation).First();
+
+            var id_chambre = res.chambreid;
+
+            // update is reserve for chambre id to true
+            var Update = db.chambres1.Find(id_chambre);
+            Update.isreserves = false;
+
+            // Mark as Changed
+            db.Entry(Update).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+
+
         }
     }
 }
