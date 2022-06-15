@@ -28,7 +28,9 @@ namespace GestionHotel.forms
 
         public Reservation()
         {
+           
             InitializeComponent();
+            
             BoxNom.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxNom.Width, BoxNom.Height, 30, 30));
             BoxPrenom.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxPrenom.Width, BoxPrenom.Height, 30, 30));
             BoxAdresse.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxAdresse.Width, BoxAdresse.Height, 30, 30));
@@ -39,12 +41,15 @@ namespace GestionHotel.forms
             BoxTel.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxTel.Width, BoxTel.Height, 30, 30));
             BoxArrhes.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, BoxArrhes.Width, BoxArrhes.Height, 30, 30));
             Valider.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Valider.Width, Valider.Height, 15, 15));
+            textPrixTotale.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, textPrixTotale.Width, textPrixTotale.Height, 30, 30));
+
 
             Model1 db = new Model1();
             var hotel = db.hotels.Select(u => u.nom);
             hotelbox.DataSource = hotel.ToList();
 
-           
+            
+
 
         }
 
@@ -110,7 +115,7 @@ namespace GestionHotel.forms
 
             var cat_id = db.categories1.Where(x => x.description == (string)cat_description).Select(r => r.id).First();
 
-            var query = db.chambres1.Where(x=> x.categorieid == cat_id).Select(r=> r.id);
+            var query = db.chambres1.Where(x=> x.categorieid == cat_id && x.isreserves == false).Select(r=> r.id);
 
             Console.WriteLine(query.ToList());
             comboBoxchambre.DataSource = query.ToList();
@@ -129,20 +134,56 @@ namespace GestionHotel.forms
             var clntId = clnt.id;
             clients1 clntobjct = db.clients1.FirstOrDefault(s => s.id == clntId);
 
-            reservations1 resrv = new reservations1() { 
+
+            // get l'id de la chambre sélectionnée :
+
+            /*  var chambre = comboBoxcat.SelectedItem;
+
+              var cat_id = db.categories1.Where(x => x.description == (string)cat_description).Select(r => r.id).First();
+
+              var query = db.chambres1.Where(x => x.categorieid == cat_id && x.isreserves == false).Select(r => r.id);
+  */
+
+
+            reservations1 resrv = new reservations1() {
                 chambreid = int.Parse(comboBoxchambre.Text),
                 clientid = clntId,
-                clients1 = clntobjct,
+                clients1 = clntobjct, // why ? 
                 date_res = DateTime.UtcNow,
                 date_debut = DateTime.Parse(dateDebut.Text),
                 date_fin = DateTime.Parse(dateTimePicker1.Text),
-                date_pay_arrhes = DateTime.Parse(dateTimePicker2.Text)
-             };
+                date_pay_arrhes = DateTime.Parse(dateTimePicker2.Text),
+                prix_res = double.Parse(textPrixTotale.Text),
+                arrhes = double.Parse(BoxArrhes.Text),
+            };
 
             db.reservations1.Add(resrv);
 
             db.SaveChanges();
 
+            // update is reserve for chambre id to true
+            var Update = db.chambres1.Find(comboBoxchambre.SelectedItem);
+            Update.isreserves = true;
+
+            // Mark as Changed
+            db.Entry(Update).State = System.Data.Entity.EntityState.Modified;
+            db.SaveChanges();
+
+
+            BoxNom.ResetText();
+            BoxPrenom.ResetText();
+            BoxAdresse.ResetText();
+            BoxPays.ResetText();
+            BoxVille.ResetText();
+            BoxCodePostale.ResetText();
+            BoxEmail.ResetText();
+            BoxTel.ResetText();
+            hotelbox.ResetText();
+            comboBoxcat.ResetText();
+            comboBoxchambre.ResetText();
+            BoxArrhes.ResetText();
+            textPrixTotale.ResetText();
+           
 
         }
 
@@ -152,6 +193,21 @@ namespace GestionHotel.forms
         }
 
         private void comboBoxchambre_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BoxTel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void BoxVille_TextChanged(object sender, EventArgs e)
         {
 
         }

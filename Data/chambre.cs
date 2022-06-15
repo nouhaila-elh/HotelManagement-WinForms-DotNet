@@ -9,25 +9,19 @@ namespace GestionHotel
     [Table("archive.chambres")]
     public partial class chambre
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public chambre()
-        {
-            reservations = new HashSet<reservation>();
-        }
-
         public int? hotelid { get; set; }
 
         public int? categorieid { get; set; }
 
+        [Key]
+        [Column(Order = 0)]
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int tel { get; set; }
 
+        [Key]
+        [Column(Order = 1)]
         public int id { get; set; }
 
-        public virtual category category { get; set; }
-
-        public virtual hotel hotel { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reservation> reservations { get; set; }
+        public bool? isreserves { get; set; }
     }
 }

@@ -65,6 +65,8 @@ namespace GestionHotel.forms
             this.comboBoxchambre = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
             this.categoriesTableAdapter = new GestionHotel.postgresDataSetTableAdapters.categoriesTableAdapter();
+            this.textPrixTotale = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postgresDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.postgresDataSet)).BeginInit();
@@ -129,6 +131,7 @@ namespace GestionHotel.forms
             this.BoxVille.Size = new System.Drawing.Size(221, 29);
             this.BoxVille.TabIndex = 7;
             this.BoxVille.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BoxVille.TextChanged += new System.EventHandler(this.BoxVille_TextChanged);
             // 
             // label3
             // 
@@ -175,6 +178,7 @@ namespace GestionHotel.forms
             this.BoxTel.Size = new System.Drawing.Size(224, 29);
             this.BoxTel.TabIndex = 13;
             this.BoxTel.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.BoxTel.TextChanged += new System.EventHandler(this.BoxTel_TextChanged);
             // 
             // label5
             // 
@@ -260,7 +264,7 @@ namespace GestionHotel.forms
             this.Valider.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Valider.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Valider.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Valider.Location = new System.Drawing.Point(663, 390);
+            this.Valider.Location = new System.Drawing.Point(664, 405);
             this.Valider.Name = "Valider";
             this.Valider.Size = new System.Drawing.Size(92, 35);
             this.Valider.TabIndex = 16;
@@ -444,12 +448,36 @@ namespace GestionHotel.forms
             // 
             this.categoriesTableAdapter.ClearBeforeFill = true;
             // 
+            // textPrixTotale
+            // 
+            this.textPrixTotale.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.textPrixTotale.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textPrixTotale.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.textPrixTotale.Location = new System.Drawing.Point(531, 370);
+            this.textPrixTotale.Multiline = true;
+            this.textPrixTotale.Name = "textPrixTotale";
+            this.textPrixTotale.Size = new System.Drawing.Size(225, 29);
+            this.textPrixTotale.TabIndex = 34;
+            this.textPrixTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft JhengHei", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(370, 370);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(152, 20);
+            this.label16.TabIndex = 33;
+            this.label16.Text = "Prix Totale               :";
+            // 
             // Reservation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textPrixTotale);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.comboBoxchambre);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.comboBoxcat);
@@ -529,5 +557,7 @@ namespace GestionHotel.forms
         private postgresDataSet postgresDataSet;
         private System.Windows.Forms.BindingSource categoriesBindingSource;
         private postgresDataSetTableAdapters.categoriesTableAdapter categoriesTableAdapter;
+        private System.Windows.Forms.TextBox textPrixTotale;
+        private System.Windows.Forms.Label label16;
     }
 }

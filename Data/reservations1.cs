@@ -31,6 +31,8 @@ namespace GestionHotel
 
         public double? prix_res { get; set; }
 
+        public double? arrhes { get; set; }
+
         public virtual chambres1 chambres1 { get; set; }
 
         public virtual clients1 clients1 { get; set; }

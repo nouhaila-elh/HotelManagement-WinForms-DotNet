@@ -22,7 +22,5 @@ namespace GestionHotel
 
         [StringLength(8000)]
         public string description { get; set; }
-
-        public virtual reservation reservation { get; set; }
     }
 }

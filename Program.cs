@@ -39,28 +39,82 @@ namespace GestionHotel
 
             var res = db.reservations1.Where(x => x.date_res <= date_archivage).ToList();
 
-            var resArchive = new reservation();
+           if(res !=null)
+            {
 
-            var countColumns = res.Count;
-
+            
             foreach (var entity in res)
             {
-                var row = new reservation();
+                 // Archivage du prestation liée à cette réservation 
+                 var prestationObject = db.prestations1.Where(x => x.reservationid == entity.id).ToList();
+
+                    if(prestationObject !=null)
+                    {
+                        foreach (var entity2 in prestationObject)
+                        {
+                            var rowPrestation = new prestation();
+                            rowPrestation.reservationid = entity2.reservationid;
+                            rowPrestation.date_consommation = entity2.date_consommation;
+                            rowPrestation.prix_prestation = entity2.prix_prestation;
+                            rowPrestation.description = entity2.description;
+                            rowPrestation.type_prestation = entity2.type_prestation;
+                            
+
+                            db.prestations.Add(rowPrestation);
+                            db.prestations1.Remove(entity2);
+                            db.SaveChanges();
+
+                        }
+
+                    }
+
+
+                    // Archivage de la réservation 
+                    var row = new reservation();
                 row.chambreid = entity.chambreid;
                 row.clientid = entity.clientid;
                 row.date_res = entity.date_res;
                 row.date_debut = entity.date_debut;
                 row.date_fin = entity.date_fin;
                 row.date_pay_arrhes = entity.date_pay_arrhes;
+                row.prix_res = entity.prix_res;
+                row.arrhes = entity.arrhes;
 
+
+                var clientobject = db.clients1.Find(entity.clientid);
                 db.reservations.Add(row);
                 db.reservations1.Remove(entity);
                 db.SaveChanges();
 
-                Console.WriteLine("l'archivage a  été effectué");
+                // Archivage du client
 
+               
+                
+               if(clientobject !=null)
+                    {
+                        var rowClient = new client();
+                        rowClient.nom = clientobject.nom;
+                        rowClient.prenom = clientobject.prenom;
+                        rowClient.address = clientobject.address;
+                        rowClient.ville = clientobject.ville;
+                        rowClient.code_postale = clientobject.code_postale;
+                        rowClient.pays = clientobject.pays;
+                        rowClient.tel = clientobject.tel;
+                        rowClient.email = clientobject.email;
+
+                        db.clients.Add(rowClient);
+                        db.clients1.Remove(clientobject);
+                        db.SaveChanges();
+                    }
+                
+
+
+
+
+                    Console.WriteLine("l'archivage a  été effectué");
+        
             }
-
+            }
 
         }
 

@@ -9,12 +9,6 @@ namespace GestionHotel
     [Table("archive.clients")]
     public partial class client
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public client()
-        {
-            reservations = new HashSet<reservation>();
-        }
-
         [Required]
         [StringLength(255)]
         public string nom { get; set; }
@@ -44,8 +38,5 @@ namespace GestionHotel
         [Required]
         [StringLength(255)]
         public string email { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<reservation> reservations { get; set; }
     }
 }

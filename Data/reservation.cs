@@ -9,12 +9,6 @@ namespace GestionHotel
     [Table("archive.reservations")]
     public partial class reservation
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public reservation()
-        {
-            prestations = new HashSet<prestation>();
-        }
-
         public int? chambreid { get; set; }
 
         public int? clientid { get; set; }
@@ -31,11 +25,6 @@ namespace GestionHotel
 
         public double? prix_res { get; set; }
 
-        public virtual chambre chambre { get; set; }
-
-        public virtual client client { get; set; }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<prestation> prestations { get; set; }
+        public double? arrhes { get; set; }
     }
 }

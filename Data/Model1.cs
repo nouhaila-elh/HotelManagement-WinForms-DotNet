@@ -8,12 +8,11 @@ namespace GestionHotel
     public partial class Model1 : DbContext
     {
         public Model1()
-            : base("name=Model14")
+            : base("name=Model18")
         {
         }
 
         public virtual DbSet<category> categories { get; set; }
-        public virtual DbSet<chambre> chambres { get; set; }
         public virtual DbSet<client> clients { get; set; }
         public virtual DbSet<employe> employes { get; set; }
         public virtual DbSet<hotel> hotels { get; set; }
@@ -27,15 +26,12 @@ namespace GestionHotel
         public virtual DbSet<hotels1> hotels1 { get; set; }
         public virtual DbSet<prestations1> prestations1 { get; set; }
         public virtual DbSet<reservations1> reservations1 { get; set; }
+        public virtual DbSet<chambre> chambres { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
-            modelBuilder.Entity<category>()
-                .HasMany(e => e.chambres)
-                .WithOptional(e => e.category)
-                .HasForeignKey(e => e.categorieid);
 
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
             modelBuilder.Entity<categories1>()
                 .HasMany(e => e.chambres1)
                 .WithOptional(e => e.categories1)

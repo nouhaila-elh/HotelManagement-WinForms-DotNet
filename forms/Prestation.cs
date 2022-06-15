@@ -54,14 +54,20 @@ namespace GestionHotel.forms
             reservations1 rsrvtnobject = db.reservations1.AsEnumerable().FirstOrDefault(s => s.id == int.Parse(BoxNom.Text));
 
             prestations1 prst = new prestations1() { reservations1 = rsrvtnobject,
-                prix_prestation = float.Parse(textBox1.Text),
                 date_consommation = DateTime.Parse(dateDebut.Text),
+                prix_prestation = float.Parse(textPrix.Text),
+                description = textDescription.Text,
+                type_prestation = textPrestation.Text,
+
             };
             db.prestations1.Add(prst);
 
             db.SaveChanges();
 
-            grd.DataSource = db.prestations1.Select(u => u).ToList();
+            BoxNom.ResetText();
+            textPrestation.ResetText();
+            textPrix.ResetText();
+            textDescription.ResetText();
 
 
         }

@@ -23,6 +23,8 @@ namespace GestionHotel
 
         public int id { get; set; }
 
+        public bool? isreserves { get; set; }
+
         public virtual categories1 categories1 { get; set; }
 
         public virtual hotels1 hotels1 { get; set; }
